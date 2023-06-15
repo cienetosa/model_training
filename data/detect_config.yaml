@@ -1,0 +1,50 @@
+#dataset
+dataset_name : "datasets/"
+target_datasets : "./datasets/"
+original_path : "./model_data/combined_car/"
+test_camera_path : "./model_data/test_camera/"
+icons_path : "../../scc/dataset/success_dataset/success/"  # "/home/mats/Projects/SCC/dataset/all_success_11.24/"
+failed_icons_image : "../../scc/dataset/data/dataset/latest/failed_images/"
+failed_icons_path : "../../scc/dataset/data/dataset/latest/failed/"
+all_camera_path : "model_data/all_test_camera/"
+new_origin_path : "model_data/combined_car/"
+new_camera_path : "model_data/test_camera/"
+all_image_path : "../ImageMarkTool/data/resources/"
+all_adb_images : "../../dataset/data_version/images/test/"
+
+
+#train_value
+exp_path : "runs/train"
+export_model : "./model_package/yolov5s-icon.ts"
+
+
+
+#package
+package_path : "./model_package"
+val_data_path : "./model_data"
+release_path : "../icon-detector/model"
+model_information : "./model_package/model.json"
+all_icon_num_json_path : "./data/scv_stat_info.json"
+detect_new_data : "../icon-category/detect_new_data.txt"
+manual_icon_num_json_path : "./data/manual_stat_info.json"
+maps : "metrics/mAP_0.5:0.95"
+
+
+#valuation
+save_precision_file : "./model_data/precision_file.json"
+show_image : True
+camera_image_save_path : "./model_data/failed_images/camera"
+original_image_save_path : "./model_data/failed_images/original"
+val_file : "../../dataset/data_version/test_yolo.json"
+val_file_coco : "../../dataset/data_version/test_change.json"
+model_config:
+    device: "cpu"
+    model_path:
+        cpu: "./model_package/yolov5s-icon.ts"
+    img:
+        width: 640
+        height: 640
+    nms:
+        score_threshold: 0.3
+        iou_threshold: 0.2
+
